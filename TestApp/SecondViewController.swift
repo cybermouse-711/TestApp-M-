@@ -9,6 +9,10 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    // MARK: - Outlet
+    @IBOutlet var nameLabel: UILabel!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,8 +21,10 @@ class SecondViewController: UIViewController {
     
 
    
-    // MARK: - Navigation
+    // MARK: - Action
 
    
-
+    @IBAction func loginOutButton() {
+    }
+    
 }

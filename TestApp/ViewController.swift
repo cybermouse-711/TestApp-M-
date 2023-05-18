@@ -8,12 +8,22 @@
 import UIKit
 
 final class ViewController: UIViewController {
-
+    
+    // MARK: - Outlet
+    @IBOutlet var loginTF: UITextField!
+    @IBOutlet var paswordTF: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
       
     }
 
-
+    
+    
+    // MARK: - Outlet
+    
+    @IBAction func loginInButton() {
+    }
+    
 }
 
