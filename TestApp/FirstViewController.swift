@@ -15,21 +15,32 @@ final class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        
+        loginTF.text = "Liza"
+        paswordTF.text = "123456"
+        
+    }
+    
+    // MARK: - Metods
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let _ = segue.destination as? SecondViewController else { return }
     }
 
     
-    
     // MARK: - Outlet
     @IBAction func loginInButton() {
+       /* guard let userLogin = loginTF.text, userPassword = paswordTF.text else {
+            warrningAlert(forTitle: "Неверный логин или пароль", andText: "Попробуйте ввести снова")
+            return
+        } */
     }
     
     @IBAction func loginButton() {
-        suggestsAlert(forTextField: "Login:", andMeaning: "")
+        suggestsAlert(forTextField: "Login:", andMeaning: "Liza")
     }
     
     @IBAction func passwordButton() {
-        suggestsAlert(forTextField: "Password:", andMeaning: "")
+        suggestsAlert(forTextField: "Password:", andMeaning: "123456")
     }
     
 }
