@@ -9,10 +9,11 @@ import UIKit
 
 final class FirstViewController: UIViewController {
     
-    // MARK: - Outlet
+    // MARK: - Outlets
     @IBOutlet var loginTF: UITextField!
     @IBOutlet var paswordTF: UITextField!
     
+    // MARK: - Property
     private let userName = "Liza"
     private let userPassword = "123456"
     
@@ -33,11 +34,11 @@ final class FirstViewController: UIViewController {
     } */
 
     
-    // MARK: - Action
+    // MARK: - Actions
     @IBAction func loginInButton() {
         guard loginTF.text == userName && paswordTF.text == userPassword else {
             warrningAlert(forTitle: "Неверный логин или пароль", andText: "Попробуйте ввести снова")
-            return 
+            return
         }
     }
     
@@ -57,7 +58,7 @@ final class FirstViewController: UIViewController {
     
 }
 
-// MARK: - UIAlertController
+// MARK: - UIAlertControllers
 extension FirstViewController {
     private func suggestsAlert(forTextField text: String, andMeaning meaning: String) {
         let alert = UIAlertController(title: text, message: meaning, preferredStyle: .alert)

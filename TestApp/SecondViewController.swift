@@ -9,7 +9,7 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
-    // MARK: - Outlet
+    // MARK: - Outlets
     @IBOutlet var welcomeUser: UILabel!
     
     // MARK: - Property
@@ -17,6 +17,6 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        welcomeUser.text = "Welcome \(String(describing: welcome))!"
+        welcomeUser.text = "Welcome \(String(welcome ?? ""))!"
     }
 }
