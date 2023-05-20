@@ -24,21 +24,21 @@ final class FirstViewController: UIViewController {
     // MARK: - Metods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let secondVC = segue.destination as? SecondViewController else { return }
-        secondVC.welcome = "Welcome \(userName)"
+        secondVC.welcome = userName
     }
     
-    /*
+   /*
     override func touchesBegan(_ touches: Set<Element: Hashable>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-    }
-*/
+    } */
+
     
-    // MARK: - Outlet
+    // MARK: - Action
     @IBAction func loginInButton() {
-       /* guard let userLogin = loginTF.text, userPassword = paswordTF.text else {
+        guard loginTF.text == userName && paswordTF.text == userPassword else {
             warrningAlert(forTitle: "Неверный логин или пароль", andText: "Попробуйте ввести снова")
-            return
-        } */
+            return 
+        }
     }
     
     @IBAction func loginButton() {

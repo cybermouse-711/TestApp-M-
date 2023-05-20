@@ -17,6 +17,6 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        welcomeUser.text = welcome
+        welcomeUser.text = "Welcome \(String(describing: welcome))!"
     }
 }
