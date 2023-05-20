@@ -11,20 +11,13 @@ class SecondViewController: UIViewController {
 
     // MARK: - Outlet
     @IBOutlet var nameLabel: UILabel!
-    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
     
-    }
-    
-
-   
-    // MARK: - Action
-
-   
-    @IBAction func loginOutButton() {
     }
     
 }

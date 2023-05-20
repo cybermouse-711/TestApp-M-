@@ -13,17 +13,22 @@ final class FirstViewController: UIViewController {
     @IBOutlet var loginTF: UITextField!
     @IBOutlet var paswordTF: UITextField!
     
+    private let userName = "Liza"
+    private let userPassword = "123456"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loginTF.text = "Liza"
-        paswordTF.text = "123456"
         
     }
     
     // MARK: - Metods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let _ = segue.destination as? SecondViewController else { return }
+    }
+    
+    
+    override func touchesBegan(_ touches: Set, with event: UIEvent?) {
+        super .touchesBegan(touches, with: event)
     }
 
     
@@ -36,11 +41,17 @@ final class FirstViewController: UIViewController {
     }
     
     @IBAction func loginButton() {
-        suggestsAlert(forTextField: "Login:", andMeaning: "Liza")
+        suggestsAlert(forTextField: "Login:", andMeaning: "\(userName)")
     }
     
     @IBAction func passwordButton() {
-        suggestsAlert(forTextField: "Password:", andMeaning: "123456")
+        suggestsAlert(forTextField: "Password:", andMeaning: "\(userPassword)")
+    }
+    
+    @IBAction func unwaid(for segue: UIStoryboardSegue){
+        guard let _ = segue.source as? SecondViewController else { return }
+        loginTF.text = ""
+        paswordTF.text = ""
     }
     
 }
