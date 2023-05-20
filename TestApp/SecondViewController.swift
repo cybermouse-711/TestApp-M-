@@ -10,14 +10,13 @@ import UIKit
 class SecondViewController: UIViewController {
 
     // MARK: - Outlet
-    @IBOutlet var nameLabel: UILabel!
-
-
+    @IBOutlet var welcomeUser: UILabel!
+    
+    // MARK: - Property
+    var welcome: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-    
+        welcomeUser.text = welcome
     }
-    
 }

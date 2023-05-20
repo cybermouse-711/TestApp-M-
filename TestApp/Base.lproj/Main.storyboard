@@ -127,7 +127,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="nameLabel" destination="Dy0-hE-I8b" id="RSD-Zh-18x"/>
+                        <outlet property="welcomeUser" destination="Dy0-hE-I8b" id="xNR-gI-cEF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IBi-cp-29k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

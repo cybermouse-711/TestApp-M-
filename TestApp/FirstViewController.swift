@@ -23,14 +23,15 @@ final class FirstViewController: UIViewController {
     
     // MARK: - Metods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let _ = segue.destination as? SecondViewController else { return }
+        guard let secondVC = segue.destination as? SecondViewController else { return }
+        secondVC.welcome = "Welcome \(userName)"
     }
     
-    
-    override func touchesBegan(_ touches: Set, with event: UIEvent?) {
-        super .touchesBegan(touches, with: event)
+    /*
+    override func touchesBegan(_ touches: Set<Element: Hashable>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
     }
-
+*/
     
     // MARK: - Outlet
     @IBAction func loginInButton() {
