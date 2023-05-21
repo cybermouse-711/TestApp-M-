@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+final class SecondViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet var welcomeUser: UILabel!
@@ -17,6 +17,6 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        welcomeUser.text = "Welcome \(String(welcome ?? ""))!"
+        welcomeUser.text = "Welcome, \(String(welcome ?? "User"))!"
     }
 }

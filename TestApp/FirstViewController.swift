@@ -13,25 +13,16 @@ final class FirstViewController: UIViewController {
     @IBOutlet var loginTF: UITextField!
     @IBOutlet var paswordTF: UITextField!
     
-    // MARK: - Property
+    // MARK: - Private Property
     private let userName = "Liza"
     private let userPassword = "123456"
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
     
-    // MARK: - Metods
+    // MARK: - Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let secondVC = segue.destination as? SecondViewController else { return }
         secondVC.welcome = userName
     }
-    
-   /*
-    override func touchesBegan(_ touches: Set<Element: Hashable>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-    } */
 
     
     // MARK: - Actions
@@ -56,6 +47,11 @@ final class FirstViewController: UIViewController {
         paswordTF.text = ""
     }
     
+    // MARK: - Metods
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+     }
 }
 
 // MARK: - UIAlertControllers
