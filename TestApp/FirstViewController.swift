@@ -24,11 +24,19 @@ final class FirstViewController: UIViewController {
         secondVC.welcome = userName
     }
 
+    // MARK: - Override metods
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+     }
     
     // MARK: - Actions
     @IBAction func loginInButton() {
-        guard loginTF.text == userName && paswordTF.text == userPassword else {
-            warrningAlert(forTitle: "Неверный логин или пароль", andText: "Попробуйте ввести снова")
+        guard loginTF.text == userName, paswordTF.text == userPassword else {
+            warrningAlert(
+                forTitle: "Неверный логин или пароль",
+                andText: "Попробуйте ввести снова"
+            )
             return
         }
     }
@@ -46,18 +54,16 @@ final class FirstViewController: UIViewController {
         loginTF.text = ""
         paswordTF.text = ""
     }
-    
-    // MARK: - Metods
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
-        super.touchesBegan(touches, with: event)
-     }
 }
 
 // MARK: - UIAlertControllers
 extension FirstViewController {
     private func suggestsAlert(forTextField text: String, andMeaning meaning: String) {
-        let alert = UIAlertController(title: text, message: meaning, preferredStyle: .alert)
+        let alert = UIAlertController(
+            title: text,
+            message: meaning,
+            preferredStyle: .alert
+        )
         let action = UIAlertAction(title: "OK", style: .default)
         alert.addAction(action)
         present(alert, animated: true)
@@ -66,7 +72,11 @@ extension FirstViewController {
 
 extension FirstViewController {
     private func warrningAlert(forTitle title: String, andText text: String) {
-        let warningAlert = UIAlertController(title: title, message: text, preferredStyle: .alert)
+        let warningAlert = UIAlertController(
+            title: title,
+            message: text,
+            preferredStyle: .alert
+        )
         let action = UIAlertAction(title: "CLOSE", style: .destructive) { _ in
             self.paswordTF.text = ""
         }
