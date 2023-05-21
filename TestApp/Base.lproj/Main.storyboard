@@ -105,12 +105,12 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIi-5o-wsZ">
-                                <rect key="frame" x="143.66666666666666" y="625" width="102.66666666666666" height="35"/>
+                                <rect key="frame" x="151" y="625" width="88" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="VTy-vE-B3h"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Login out">
+                                <buttonConfiguration key="configuration" style="plain" title="Log out">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="19"/>
                                 </buttonConfiguration>
                                 <connections>
