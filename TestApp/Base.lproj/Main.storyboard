@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="FirstViewController" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,7 +34,6 @@
                                         <buttonConfiguration key="configuration" style="tinted" title="Log in"/>
                                         <connections>
                                             <action selector="loginInButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="fdw-kw-NWW"/>
-                                            <segue destination="0Jq-S2-2WI" kind="presentation" modalPresentationStyle="fullScreen" id="uBT-Qc-mWF"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="A61-fj-dWK">
@@ -45,15 +44,15 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Login"/>
                                                 <connections>
-                                                    <action selector="loginButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="wCb-GS-qrP"/>
+                                                    <action selector="userData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oZv-cp-f8g"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOr-cX-8Yc">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOr-cX-8Yc">
                                                 <rect key="frame" x="175" y="0.0" width="135" height="49.666666666666664"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Password"/>
                                                 <connections>
-                                                    <action selector="passwordButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="GzZ-yf-KqR"/>
+                                                    <action selector="userData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0yk-ak-lCR"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -73,16 +72,17 @@
                     <connections>
                         <outlet property="loginTF" destination="Z9A-cW-JPJ" id="fTN-y1-ORR"/>
                         <outlet property="paswordTF" destination="4LU-h6-Ejf" id="Mhe-kJ-AtH"/>
+                        <segue destination="0Jq-S2-2WI" kind="presentation" identifier="showWelcomeVC" modalPresentationStyle="fullScreen" id="c7f-Hy-wfg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="101.5267175572519" y="3.5211267605633805"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="eyn-ov-P5d">
             <objects>
-                <viewController id="0Jq-S2-2WI" customClass="SecondViewController" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0Jq-S2-2WI" customClass="WelcomeViewController" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v5G-QF-B9d">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,7 +93,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Welcome, User!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dy0-hE-I8b">
                                         <rect key="frame" x="0.0" y="0.0" width="202" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lj6-rN-QEZ">
@@ -139,9 +139,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
