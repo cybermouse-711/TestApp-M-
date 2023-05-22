@@ -14,6 +14,6 @@ struct User {
 }
 
 struct Person {
-    let infoAboutPerson: String 
+    let infoAboutPerson: String
     
 }
