@@ -229,27 +229,25 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Person" id="7gB-TC-ISV">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="ykF-EE-eML">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="cXl-M0-xk6">
-                                <rect key="frame" x="229" y="7.5" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" title="Next" image="arrowshape.forward" catalog="system" id="OOp-ZE-k2Z">
                             <connections>
-                                <segue destination="xtt-GY-dT5" kind="show" id="3a8-eo-nY8"/>
+                                <segue destination="xtt-GY-dT5" kind="show" id="WKy-Ur-DYz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="xtt-GY-dT5" kind="show" id="9LZ-VM-zu5"/>
+                        <outlet property="companyUser" destination="Gl2-ZP-kYO" id="Otq-k2-et3"/>
+                        <outlet property="fotoUser" destination="kpf-88-b8n" id="kqf-99-oEI"/>
+                        <outlet property="jobUser" destination="B7m-wj-6jS" id="WHY-lC-Tfl"/>
+                        <outlet property="nameUser" destination="Mfy-pa-6Hn" id="hsu-io-qKT"/>
+                        <outlet property="surnameUser" destination="be0-zD-Irq" id="6WU-oL-n6C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pKl-2b-GsP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2334.375" y="798.59154929577471"/>
         </scene>
-        <!--Person-->
+        <!--Info-->
         <scene sceneID="hUQ-KL-ERi">
             <objects>
                 <viewController id="xtt-GY-dT5" customClass="InfoViewController" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -263,16 +261,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Person" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nk4-fH-khv">
+                                <rect key="frame" x="30" y="122.5" width="260" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ugf-fv-OQM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Qeq-2m-Ygg" firstAttribute="leading" secondItem="Ugf-fv-OQM" secondAttribute="leading" constant="30" id="OGV-cg-6wc"/>
+                            <constraint firstItem="Nk4-fH-khv" firstAttribute="leading" secondItem="Ugf-fv-OQM" secondAttribute="leading" constant="30" id="bS9-ky-9sc"/>
                             <constraint firstItem="Ugf-fv-OQM" firstAttribute="trailing" secondItem="Qeq-2m-Ygg" secondAttribute="trailing" constant="30" id="bud-v7-pT2"/>
                             <constraint firstItem="Qeq-2m-Ygg" firstAttribute="top" secondItem="Ugf-fv-OQM" secondAttribute="top" constant="150" id="dgs-a8-9be"/>
+                            <constraint firstItem="Nk4-fH-khv" firstAttribute="top" secondItem="Ugf-fv-OQM" secondAttribute="top" constant="30" id="nXW-Sd-eOl"/>
+                            <constraint firstItem="Ugf-fv-OQM" firstAttribute="trailing" secondItem="Nk4-fH-khv" secondAttribute="trailing" constant="30" id="uEh-XM-6Oy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Person" id="IK5-Jn-da5"/>
+                    <navigationItem key="navigationItem" title="Info" id="IK5-Jn-da5"/>
+                    <connections>
+                        <outlet property="infoUser" destination="Qeq-2m-Ygg" id="rzp-vU-Dat"/>
+                        <outlet property="nameUser" destination="Nk4-fH-khv" id="Gjy-GT-URi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggn-IW-50R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -284,6 +295,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="jjh-j4-Glk" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vu2-A1-Alf">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -316,10 +328,8 @@
             <point key="canvasLocation" x="1597.5" y="798.59154929577471"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="9LZ-VM-zu5"/>
-    </inferredMetricsTieBreakers>
     <resources>
+        <image name="arrowshape.forward" catalog="system" width="128" height="104"/>
         <image name="paperplane" catalog="system" width="128" height="119"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">

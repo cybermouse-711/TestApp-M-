@@ -8,7 +8,11 @@
 import UIKit
 
 class InfoViewController: UIViewController {
-
+    
+    // MARK: - Outlets
+    @IBOutlet var nameUser: UILabel!
+    @IBOutlet var infoUser: UILabel!
+    
     // MARK: - Private property
     private let firstColor = UIColor(
         red: 135/255,

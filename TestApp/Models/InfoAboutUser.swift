@@ -7,10 +7,9 @@
 
 
 struct User {
-    let loginUser: String
-    let passwordUser: String
+    let loginUser = "Liza"
+    let passwordUser = "123456"
     let person: Person
-    
 }
 
 struct Person {
