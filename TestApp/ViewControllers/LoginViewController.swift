@@ -8,20 +8,22 @@
 import UIKit
 
 final class LoginViewController: UIViewController {
+    let infoAbotPerson = User.showsDataUser()
     
     // MARK: - Outlets
     @IBOutlet var loginTF: UITextField!
     @IBOutlet var paswordTF: UITextField!
     
-    // MARK: - Private Property
-    private let userName = "Liza"
-    private let userPassword = "123456"
-    
-    
     // MARK: - Override metods
+    
+    override func viewDidLoad() {
+        loginTF.text = infoAbotPerson.loginUser
+        paswordTF.text = infoAbotPerson.passwordUser
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.welcome = userName
+        welcomeVC.welcome = infoAbotPerson.loginUser
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -31,7 +33,9 @@ final class LoginViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func loginInButton() {
-        guard loginTF.text == userName, paswordTF.text == userPassword else {
+        guard loginTF.text == infoAbotPerson.loginUser,
+                paswordTF.text == infoAbotPerson.passwordUser
+        else {
             warrningAlert(
                 forTitle: "Неверный логин или пароль",
                 andText: "Попробуйте ввести снова"
@@ -43,8 +47,8 @@ final class LoginViewController: UIViewController {
     
     @IBAction func userData(_ sender: UIButton) {
         sender.tag == 0
-            ? warrningAlert(forTitle: "Wrong!", andText: "User name: \(userName)")
-            : warrningAlert(forTitle: "Wrong!", andText: "User password: \(userPassword)")
+            ? warrningAlert(forTitle: "Wrong!", andText: "Имя пользователя: \(infoAbotPerson.loginUser)")
+            : warrningAlert(forTitle: "Wrong!", andText: "Пароль пользователя: \(infoAbotPerson.passwordUser)")
     }
     
     @IBAction func unwaid(for segue: UIStoryboardSegue) {
