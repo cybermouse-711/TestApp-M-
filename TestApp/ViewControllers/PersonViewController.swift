@@ -8,6 +8,7 @@
 import UIKit
 
 class PersonViewController: UIViewController {
+    let infoAbotPerson = User.showsDataUser()
     
     // MARK: - Outlets
     @IBOutlet var fotoUser: UIImageView!
@@ -36,8 +37,20 @@ class PersonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addVerticalGradientLayer(topColor: firstColor, bottomColor: secondColor)
+        showsPerson()
+        //fotoUser = UIImageView(image: footoUser)
     }
     
+    // MARK: - Metods
+    func showsPerson() {
+        nameUser.text = infoAbotPerson.person.name
+        surnameUser.text = infoAbotPerson.person.surname
+        companyUser.text = infoAbotPerson.person.company
+        jobUser.text = infoAbotPerson.person.job
+    }
+    
+    
 }
+    
 
 
