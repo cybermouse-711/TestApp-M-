@@ -8,6 +8,7 @@
 import UIKit
 
 class InfoViewController: UIViewController {
+    let infoAbotPerson = User.showsDataUser()
     
     // MARK: - Outlets
     @IBOutlet var nameUser: UILabel!
@@ -32,8 +33,14 @@ class InfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addVerticalGradientLayer(topColor: firstColor, bottomColor: secondColor)
+        showsPerson()
     }
-
+    
+    // MARK: - Metods
+    func showsPerson() {
+        nameUser.text = infoAbotPerson.person.name
+        infoUser.text = infoAbotPerson.person.info
+    }
 }
 
 
