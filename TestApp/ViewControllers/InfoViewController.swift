@@ -8,38 +8,21 @@
 import UIKit
 
 class InfoViewController: UIViewController {
-    let infoAbotPerson = User.showsDataUser()
     
     // MARK: - Outlets
     @IBOutlet var nameUser: UILabel!
     @IBOutlet var infoUser: UILabel!
     
-    // MARK: - Private property
-    private let firstColor = UIColor(
-        red: 135/255,
-        green: 206/255,
-        blue: 250/255,
-        alpha: 1
-    )
-    
-    private let secondColor = UIColor(
-        red: 240/255,
-        green: 248/255,
-        blue: 255/255,
-        alpha: 1
-    )
+    // MARK: - Property
+    var user: User!
     
     // MARK: - Override metods
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addVerticalGradientLayer(topColor: firstColor, bottomColor: secondColor)
-        showsPerson()
-    }
-    
-    // MARK: - Metods
-    func showsPerson() {
-        nameUser.text = infoAbotPerson.person.name
-        infoUser.text = infoAbotPerson.person.info
+        view.addVerticalGradientLayer()
+        title = "\(user.person.fullName)"
+        nameUser.text = user.person.name
+        infoUser.text = user.person.info
     }
 }
 

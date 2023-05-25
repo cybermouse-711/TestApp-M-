@@ -8,22 +8,40 @@
 import UIKit
 
 final class LoginViewController: UIViewController {
-    let infoAbotPerson = User.showsDataUser()
     
     // MARK: - Outlets
     @IBOutlet var loginTF: UITextField!
     @IBOutlet var paswordTF: UITextField!
     
-    // MARK: - Override metods
+    // MARK: - Private
+    private let user = User.showsDataUser()
     
+    // MARK: - Override metods
     override func viewDidLoad() {
-        loginTF.text = infoAbotPerson.loginUser
-        paswordTF.text = infoAbotPerson.passwordUser
+        loginTF.text = user.login
+        paswordTF.text = user.password
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-        welcomeVC.welcome = infoAbotPerson.loginUser
+        guard let tabBarController = segue.destination as? UITabBarController else {
+            return
+        }
+        
+        guard let viewConrollers = tabBarController.viewControllers else {
+            return
+        }
+        
+        viewConrollers.forEach {
+            if let welcomeVC = $0 as? WelcomeViewController {
+                welcomeVC.user = user
+            } else if let navigatoiVC = $0 as? UINavigationController {
+                let infoUserVC = navigatoiVC.topViewController
+                guard let infoUserVC = infoUserVC as? PersonViewController else {
+                    return
+                }
+                infoUserVC.user = user
+            }
+        }
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -33,8 +51,8 @@ final class LoginViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func loginInButton() {
-        guard loginTF.text == infoAbotPerson.loginUser,
-                paswordTF.text == infoAbotPerson.passwordUser
+        guard loginTF.text == user.login,
+                paswordTF.text == user.password
         else {
             warrningAlert(
                 forTitle: "Неверный логин или пароль",
@@ -47,8 +65,8 @@ final class LoginViewController: UIViewController {
     
     @IBAction func userData(_ sender: UIButton) {
         sender.tag == 0
-            ? warrningAlert(forTitle: "Wrong!", andText: "Имя пользователя: \(infoAbotPerson.loginUser)")
-            : warrningAlert(forTitle: "Wrong!", andText: "Пароль пользователя: \(infoAbotPerson.passwordUser)")
+            ? warrningAlert(forTitle: "Wrong!", andText: "Имя пользователя: \(user.login)")
+            : warrningAlert(forTitle: "Wrong!", andText: "Пароль пользователя: \(user.password)")
     }
     
     @IBAction func unwaid(for segue: UIStoryboardSegue) {

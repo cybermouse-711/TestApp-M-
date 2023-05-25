@@ -1,0 +1,57 @@
+//
+//  User.swift
+//  TestApp
+//
+//  Created by Елизавета Медведева on 25.05.2023.
+//
+
+struct User {
+    let login: String
+    let password: String
+    let person: Person
+    
+    static func showsDataUser() -> User {
+        User(
+            login: "Liza",
+             password: "123456",
+            person: Person.getPerson()
+        )
+    }
+}
+
+struct Person {
+    
+    let name: String
+    let surname: String
+    let foto: String
+    let info: String
+    let job: Job
+    
+    var fullName: String {
+        "\(name) \(surname)"
+    }
+    
+    static func getPerson() -> Person {
+        Person(
+            name: "Елизавета",
+            surname: "Медведева",
+            foto: "footoUser",
+            info: "Я проживаю в Москве. Работаю инженером в жилищном строительстве. Моя компания реализует объекты, которые вписываются в городской ландшафт и не загрязняют окружающую среду. Также у меня есть собака породы Немецкий пинчер. А в свободное от работы время, я люблю гулять в парках и читать научпоп о космосе.",
+            job: Job.getJob()
+        )
+    }
+    
+ }
+
+struct Job {
+    let company: String
+    let job: String
+    
+    static func getJob() -> Job {
+        Job(
+            company: "Forma",
+            job: "Инженер"
+        )
+    }
+}
+
